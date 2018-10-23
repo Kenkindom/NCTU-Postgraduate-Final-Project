@@ -1,12 +1,15 @@
+# Data Procees
+Convert Our Label Or PETA Label To TFRecord Data
+
 # Evaluation
 Evaluate Mask R-CNN or YOLO Detection Result
 Draw PR-Curve And Calculate AP(ROC)
 
 # For MaskRCNN
-Convert Label To Mask-RCNN Training Data Format
+Convert Our Label To Mask-RCNN Training Data Format
 
 # For YOLO
-Convert Label To YOLO Training Data Format
+Convert Our Label To YOLO Training Data Format
 
 # PeopleClassification
 Use TFRecord Data For Training And Testing
