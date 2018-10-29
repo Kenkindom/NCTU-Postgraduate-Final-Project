@@ -50,29 +50,29 @@
     
     End of main function Draw learning curve
 
-#MaskRCNN偵測
-    Mask R-CNN Detect And Predict Attribute
-    程式執行前須先將
-        人工標計的屬性label檔案放置指定的人工label檔案之位置(mat_Dir)
-        所有原始影像放置指定的輸入影像位置(filename)
+#MaskRCNN Detect
+1.  Mask R-CNN Detect Pedestrin And Predict Attribute 
+    Mask R-CNN Detect And Predict Attribute Folder
+    Before Run Program:
+        Manual Attribute Label File Put On Manual Label File Site(mat_Dir)
+        Put All Street Image On Input Folder(filename)
+    When Run demo.py Will Detect All Image In Input Folder. And Comparison All Label File People Bounding Box With Detected People Bounding Box IOU >= 0.5. Save Label Imformation, And Predict People Attribute. Final Output Confusion Matrix
+   
+    MODEL_SAVE_PATH Is Attribute Model Path
+    MODEL_NAME Is Attribute Model Name
+    TFDIR + TFDATA Is MinMaxScaler Converter Path
+    MMS_PATH = TFDIR + TFDATA + MinMaxScaler Converter Name
+    Time Is "morning" Or "night"
 
-    執行demo.py，會將指定的輸入資料夾中所有影像作行人偵測，並且對應到指定的label資料夾去比對Bounding Box IOU>=0.5，保留期原本的Label資訊，將所有偵測到的行人影像、原Label串起來後，放入指定的模型中進行預測，最後輸出Confusion Matrix
+    In Program
+    filename Is Input Image Path
+    mat_Dir Is Manual Label File Path
+    When Comparison IOU >= 0.5, Will Save Detect People Image, Mask Image, Label On Output Folder.
 
-    MODEL_SAVE_PATH 為指定的模行路徑
-    MODEL_NAME 為指定的模型名稱
-    TFDIR + TFDATA 為指定的MinMaxScaler轉換器之路徑
-    MMS_PATH = TFDIR + TFDATA + MinMaxScaler轉換器之名稱
-    Time 為白天(morning)或晚上(night)
+    When Time Is "night". Label File's Color Attribute Is "Unknown", So Skip Color Compare
 
-    程式中
-    filename 為指定的輸入影像位置
-    mat_Dir 為指定的人工label檔案之位置
-    當對應的IOU >= 0.5時，會將偵測到的行人影像、Mask影像、Label存起來至指定的輸出位置，因無設定輸出變數須，因此必須要自行修改
-
-    須注意當Time = night時，因label檔案中顏色標記幾乎皆為Unknown，因此必須跳過顏色的比對
-
-    若要利用偵測到的行人進行轉成TFrecord檔，則在輸出的資料夾中工執行TFRecord_write.py
-    並將輸出後的TFData中資料夾移至上面第3點的TFDir，並設定好TFDATA即可進行訓練
+    If Want To Convert Detect People To TFrecord File. Can Use TFRecord_write.py
+    Move Output TFData Folder Data To Third Step "FDir". And Set TFDATA
 
 
 #將人工標記之Label轉成YOLO或MaskRCNN可讀之格式
