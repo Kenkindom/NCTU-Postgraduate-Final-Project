@@ -77,13 +77,14 @@ Mask R-CNN Detect And Predict Attribute
 
 #將人工標記之Label轉成YOLO或MaskRCNN可讀之格式
 1.  For YOLO
-    (1) 將superpixel後的Label利用MatToXml.m轉檔
+
+    (1).將superpixel後的Label利用MatToXml.m轉檔
         matFolder 為指定的輸入label資料夾
         xmlFolder 為指定的輸出xml資料夾
         jpgFolder 為指定的輸出jpg資料夾 #可不需要
         txtName 為指定的txt檔案名稱，內容為所有的影像名稱 #可不需要
     
-    (2) 將已標記行人屬性的Label利用LabelToXml.m轉檔
+    (2).將已標記行人屬性的Label利用LabelToXml.m轉檔
         matFolder 為指定的輸入Label資料夾
         xmlFolder 為指定的輸出xml資料夾
 
@@ -91,13 +92,14 @@ Mask R-CNN Detect And Predict Attribute
     xml檔案中包含影像名稱、影像長寬、影像中所有行人的bbox位置長寬
 
 2.  For Mask R-CNN
-    (1) 將superpixel後的Label利用MatToJson.m轉檔
+
+    (1).將superpixel後的Label利用MatToJson.m轉檔
         matFolder 為指定的輸入label資料夾
         jsonTrainFile 為指定的訓練用Json檔
         jsonValFile 為指定的驗證用Json檔
         會利用annSegmentation.m計算出行人輪廓之座標，若連續三點成一線，則只保留兩端點座標
 
-    (2) 將已標記行人屬性的Label利用LabelToJson.m轉檔
+    (2).將已標記行人屬性的Label利用LabelToJson.m轉檔
         matFolder 為指定的輸入label資料夾
         jsonFolder 為指定的輸出Json檔案之資料夾，會輸出以下四個檔案
         jsonTrainFile 為指定的訓練用Json檔
@@ -116,10 +118,10 @@ Mask R-CNN Detect And Predict Attribute
 
 #評估
 Evaluation
-    (1) PRcurve.m利用Bounding Box IOU >= 0.5進行評估
+    (1).PRcurve.m利用Bounding Box IOU >= 0.5進行評估
         將MaskR-CNN偵測到的行人之Bounding Box資訊存至txt檔案中
         txtFile 為指定的Bounding Box txt檔
-    (2) PRcuve_Pixel.m利用Pixel IOU >= 0.5進行評估
+    (2).PRcuve_Pixel.m利用Pixel IOU >= 0.5進行評估
         將MaskR-CNN偵測到的行人之Mask資訊存至txt檔案中
         txtFile 為指定的Bounding Box txt檔
 
