@@ -2,12 +2,12 @@
 1.  將Mat檔或PETA資料夾進行轉檔
     Data Process
     利用相關的Matlab程式進行轉檔
-    (1) ConvertLabel.m將所有行人mat檔案，轉出各自的行人image、label、mask、maskImage，程式中
+    (1).ConvertLabel.m將所有行人mat檔案，轉出各自的行人image、label、mask、maskImage，程式中
         DATA_NAME為指定的輸出資料夾名稱
 	MAT_PATH為指定的行人Mat檔資料夾之位置
 	程式中必須利用Mat檔案的Time來判斷使用白天或晚上的資料，須注意在進行晚上資料的轉檔時，必須跳過顏色判斷的部分
 
-    (2) ConvertPETALabel.m將PETA資料集中的指定資料夾之行人影像與Label，轉出各自的行人image、label，程式中
+    (2).ConvertPETALabel.m將PETA資料集中的指定資料夾之行人影像與Label，轉出各自的行人image、label，程式中
         FolderName為指定的PETA子資料夾
 
 2.  將資料轉為TFRecord檔案
